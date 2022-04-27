@@ -1,0 +1,90 @@
+@import './variables.scss';
+@import './editor.scss';
+@import './helpers.scss';
+@import './topNav.scss';
+@import './help.scss';
+@import './latex.scss';
+
+html {
+    background-color: $mainBackground;
+    overflow-x: hidden;
+}
+#app {
+    color: $font;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.modal {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 20rem;
+    height: 14rem;
+    background-color: $secondBackground;
+    border: 2px solid $secondary;
+    border-radius: 20px;
+    text-align: center; 
+    z-index: 11;
+}
+
+.is-modal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $mainBackground;
+    z-index: 10;
+    opacity: 0.6;
+}
+
+.button {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    
+    &.is-primary {
+        background-color: $primary;
+        color: black;
+        font-size: 1.3rem;
+    }
+    &.is-secondary {
+        background-color: $secondary;
+        color: black;
+        font-size: 1.3rem;
+    }
+    &.home {
+        padding-left: 1rem;
+        padding-right: 1rem; 
+        font-size: 1.2rem;
+    }
+}
+
+.input {
+    width: 70%;
+    height: 1.5rem;
+    margin: -3rem 0 1.2rem 0;
+    padding: 5px;
+    background-color: $secondBackground;
+    border-radius: 10px;
+    color: $primary;
+    border: 1px solid $primary;
+}
+
+// transitions
+.fade-enter-active,
+.fade-leave-active {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.fade-leave-to,
+.fade-enter {
+  opacity: 0;
+}

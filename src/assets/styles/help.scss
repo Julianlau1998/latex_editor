@@ -1,0 +1,70 @@
+.is-help-page {
+    width: 100vw;
+}
+
+.is-help {
+    margin-left: 1.5rem;
+    text-align: left;
+    width: 100vw;
+    max-width: 60rem;
+}
+
+.is-header {
+    padding-left: -1.5rem;
+    text-align: center;
+}
+
+.is-center {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.is-help-header {
+    color: $secondary;
+}
+
+.is-help-header-headers {
+    margin-top: 6rem;
+}
+
+.is-help-divider {
+    width: 90%;
+    margin-left: -0.5rem;
+}
+
+.is-markdown-help-element {
+    margin-top: -0.9rem;
+}
+
+.is-pointer {
+    cursor: pointer;
+}
+
+// .is-help-preview {
+//     width: 75%;
+//     padding: 1px 10px 1px 10px;
+//     margin: 20px 0 20px 0;
+//     box-shadow: 0px 0px 5px 2px $primary;
+// }
+
+@media (min-width: 700px) {
+    .is-help {
+        padding-left: 8rem;
+    }
+    .is-help-divider {
+        width: 65%;
+        margin-left: -0.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .is-help {
+        padding-left: 13rem;
+    }
+    .is-help-divider {
+        width: 65%;
+        margin-left: -0.5rem;
+    }
+}

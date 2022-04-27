@@ -1,0 +1,9 @@
+[
+      {
+            "relation": ["delegate_permission/common.handle_all_urls"],
+            "target" : { 
+                  "namespace": "android_app",
+                  "package_name": "app.markdowneditor.jl.com",
+                  "sha256_cert_fingerprints": ["A4:9E:B2:00:6D:E0:93:30:A1:77:0F:3D:CA:6B:5A:B5:6A:4E:50:41:6F:E9:82:EE:C7:4C:CC:F2:A2:09:5B:39"] }
+            }
+]

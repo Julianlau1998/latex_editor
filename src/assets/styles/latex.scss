@@ -1,0 +1,22 @@
+.MathJax .noError { 
+    color: white !important;
+    border: 1px solid white !important;
+}
+
+#MathJax_Message {
+    opacity: 0;
+}
+
+.is-button-wrapper {
+    margin-top: 1rem;
+}
+
+.is-tex-button {
+    padding: 0.8rem;
+    margin: 0.4rem 0.3rem;
+    min-width: 3.5rem;
+    font-size: 1.4rem;
+    background-color: $primary;
+    border: 1px solid black;
+    border-radius: 10px;
+}

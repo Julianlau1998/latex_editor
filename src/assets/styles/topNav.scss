@@ -1,0 +1,61 @@
+@import './variables.scss';
+
+.is-topnav {
+    width: 99.8vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $secondBackground;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: 2;
+    font-size: 1.8rem;
+}
+
+.settingsWrapper {
+    position: absolute;
+    top: 1.1rem;
+    right: 2rem;
+}
+
+.settings {
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: 8rem;
+    border: 1px solid $secondary;
+    padding: 8px 7px 7px 8px;
+    border-radius: 5px;
+    background: $secondBackground;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    font-size: 1.5rem;
+}
+
+.is-playBillingSetting {
+    line-height: 1 !important;
+}
+
+.setting:hover, .setting:active {
+    color: $secondary;
+}
+
+.setting {
+    margin-bottom: 10.7rem !important;
+}
+
+label.label input[type="file"] {
+    position: absolute;
+    top: -1000px;
+}
+  .label:invalid+span {
+    color: #000000;
+  }
+  .label:valid+span {
+    color: #ffffff;
+  }
+
+  .hr {
+      border-top: 2px solid $secondary;
+      margin: 10px;
+  }
