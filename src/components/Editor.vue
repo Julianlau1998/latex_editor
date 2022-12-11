@@ -95,7 +95,7 @@
             @click="webviewTrigger"
             class="button is-ads-button is-border-secondary mt-5"
         >
-          Get Rid of ads
+          Get Rid Of Ads
         </button>
         <SaveModal
             v-if="saveFileModalOpen"
