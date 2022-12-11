@@ -32,6 +32,15 @@
                             Help
                         </span>
                     </span> -->
+                    <span v-if="iosLiteApp">
+                          <div class="hr" />
+                          <span
+                              @click="webviewTrigger"
+                              class="is-pointer mt-6 setting noselect is-playBillingSetting"
+                          >
+                              Get Rid Of Ads
+                          </span>
+                    </span>
                     <span v-if="playBillingSupported">
                         <div class="hr" />
                         <span
@@ -74,6 +83,11 @@ export default {
             this.shareAvailable = true
         }
     },
+    computed: {
+      iosLiteApp () {
+        return window.webkit && window.webkit.messageHandlers
+      }
+    },
     methods: {
         share () {
             this.$emit('share')
@@ -104,6 +118,13 @@ export default {
         home () {
             if (this.$route.path === '/') return
             this.$router.push('/')
+        },
+        webviewTrigger () {
+          if (this.iosLiteApp && window.webkit.messageHandlers.webviewTrigger) {
+            window.webkit.messageHandlers.webviewTrigger.postMessage({
+              "message": 'open AppStore:'
+            });
+          }
         },
         async makePurchase(service) {
             const paymentMethods = [{
