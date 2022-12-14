@@ -90,13 +90,13 @@
                 </div>
             </div>
         </transition>
-        <button
+<!--        <button
             v-if="iosLiteApp"
             @click="webviewTrigger"
             class="button is-ads-button is-border-secondary mt-5"
         >
           Get Rid Of Ads
-        </button>
+        </button>-->
         <SaveModal
             v-if="saveFileModalOpen"
             @save="downloadFile"
