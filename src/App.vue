@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <router-view/>
+    <AdCard v-if="!iOS" />
   </div>
 </template>
 
 <script>
+import AdCard from "@/components/ads/AdCard"
   export default {
+  components: { AdCard },
     data () {
       return {
         iOS: false
