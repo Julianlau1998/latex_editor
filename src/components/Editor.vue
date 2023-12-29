@@ -4,7 +4,7 @@
             <transition name="fade" mode="out-in">
                 <span v-if="!preview" :key="1">
                     <button
-                        @click="preview = !preview"
+                        @click="previewToggle"
                         class="button is-primary mt-3 pl-4"
                     >
                         Preview
@@ -25,7 +25,7 @@
                 </span>
                 <span v-else :key="2">
                     <button
-                        @click="preview = !preview"
+                        @click="previewToggle"
                         class="button is-primary mt-5 pl-4"
                     >
                         Edit
@@ -132,7 +132,8 @@ export default {
             markdownWrapper: '',
             saveFileModalOpen: false,
             shareAvailable: false,
-            copied: false
+            copied: false,
+            clicks: 0
         }
     },
     watch: {
@@ -161,19 +162,34 @@ export default {
         }
     },
     created () {
-        // window.visualViewport.addEventListener(
-        //     'resize', 
-        //     () => {
-        //         if (this.iOS) {
-        //             setTimeout(() => {
-        //                 window.scrollTo(0)
-        //             }, 200)
-        //         }
-        //     } 
-        // )
+        this.clicks = parseInt(localStorage.getItem('clickedGenerate'))
+        if(this.clicks == null || isNaN(this.clicks)) {
+            this.clicks = 0
+        }
         this.shareAvailable = window.navigator.share
     },
     methods: {
+        previewToggle () {
+            this.preview = !this.preview
+            this.addClick()
+        },
+        addClick () {
+            this.clicks++
+            localStorage.setItem('clicked', this.clickedGenerate)
+
+            if(this.clicks > 4) {
+                this.clicks = 0
+                localStorage.setItem('clicked', 0)
+                this.showInterstitial()
+            }
+        },
+        showInterstitial () {
+          if (this.iOS) {
+            window.webkit.messageHandlers.showInterstitial.postMessage({
+              "message": 'showInterstitial'
+            })
+          }
+        },
         addToLatex (element) {
             this.inputText += element
             this.$refs.textArea.focus()
@@ -192,6 +208,7 @@ export default {
                     setTimeout(() => {
                         this.copied = false
                     }, 400)
+                    this.addClick()
                 })
         },
         createFileLink (fileName) {
@@ -218,7 +235,7 @@ export default {
         webviewTrigger () {
           if (this.iosLiteApp && window.webkit.messageHandlers.webviewTrigger) {
             window.webkit.messageHandlers.webviewTrigger.postMessage({
-              "message": 'open AppStore:'
+              "message": 'openAppStore:'
             });
           }
         }
