@@ -235,7 +235,7 @@ export default {
         webviewTrigger () {
           if (this.iosLiteApp && window.webkit.messageHandlers.webviewTrigger) {
             window.webkit.messageHandlers.webviewTrigger.postMessage({
-              "message": 'openAppStore:'
+              "message": 'openAppStore'
             });
           }
         }
