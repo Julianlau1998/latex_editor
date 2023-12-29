@@ -121,9 +121,9 @@ export default {
         },
         webviewTrigger () {
           if (this.iosLiteApp && window.webkit.messageHandlers.webviewTrigger) {
-            window.webkit.messageHandlers.webviewTrigger.postMessage({
-              "message": 'open AppStore:'
-            });
+            window.webkit.messageHandlers.openAppStore.postMessage({
+              "message": 'openAppStore'
+            })
           }
         },
         async makePurchase(service) {
