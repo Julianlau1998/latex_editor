@@ -39,6 +39,7 @@
         <transition name="fade" mode="out-in">
             <div v-if="!preview" :key="1">
                 <textarea
+                    @click="addClick"
                     v-model="inputText"
                     ref="textArea"
                     class="is-editor pt-5 pb-5 is-primary"
